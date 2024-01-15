@@ -1,0 +1,75 @@
+/* Updated styles.css with white and sky blue color scheme */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light grey background for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+header {
+    background-color: #87CEEB; /* Sky blue background */
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 2em;
+}
+
+h1, h2 {
+    margin: 20px 0;
+    text-align: center;
+    color: #333; /* Dark text for headers */
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: white; /* White background for sections */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #87CEEB; /* Sky blue for bullet points */
+}
+
+button {
+    background-color: #87CEEB; /* Sky blue buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #5b9bd5; /* Darker shade of blue for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 0;
+        font-size: 1.5em;
+    }
+
+    section {
+        margin: 20px;
+    }
+}
