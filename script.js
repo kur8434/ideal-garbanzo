@@ -61,3 +61,47 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+function calculateCalories() {
+    var weight = document.getElementById('weight').value;
+    var height = document.getElementById('height').value;
+    var age = document.getElementById('age').value;
+    var gender = document.getElementById('gender').value;
+    var activityLevel = document.getElementById('activity-level').value;
+    var unitSystem = document.getElementById('unit-system').value;
+    
+    // Convert units to metric if necessary
+    if (unitSystem === 'imperial') {
+        weight = weight / 2.20462; // Convert pounds to kg
+        height = height * 2.54; // Convert inches to cm
+    }
+
+    // Calculate Basal Metabolic Rate (BMR)
+    var bmr;
+    if (gender === 'male') {
+        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else {
+        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    }
+
+    // Adjust BMR based on activity level
+    var multiplier;
+    switch (activityLevel) {
+        case 'inactive':
+            multiplier = 1.2;
+            break;
+        case 'somewhat':
+            multiplier = 1.375;
+            break;
+        case 'active':
+            multiplier = 1.55;
+            break;
+        case 'very':
+            multiplier = 1.725;
+            break;
+    }
+
+    var calories = bmr * multiplier;
+    document.getElementById('calorie-result').textContent = calories.toFixed(2);
+}
+
