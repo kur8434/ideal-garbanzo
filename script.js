@@ -101,7 +101,8 @@ function calculateCalories() {
             break;
     }
 
-    var calories = bmr * multiplier;
+ var calories = bmr * multiplier;
     document.getElementById('calorie-result').textContent = calories.toFixed(2);
+    document.getElementById('result').style.display = 'block'; // Make the result div visible
 }
 
