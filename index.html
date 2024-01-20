@@ -51,6 +51,21 @@
             </form>
             <div id="result">Your Daily Calorie Needs: <span id="calorie-result"></span></div>
     </section>
+        
+    <section id="bmi-calculator">
+        <h2>BMI Calculator</h2>
+            <form id="bmi-form">
+                <label for="bmi-weight">Weight (kg):</label>
+                <input type="number" id="bmi-weight" name="bmi-weight" required>
+        
+                <label for="bmi-height">Height (cm):</label>
+                <input type="number" id="bmi-height" name="bmi-height" required>
+        
+                <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+            </form>
+            <div id="bmi-result">Your BMI: <span id="bmi-value"></span></div>
+    </section>
+
 
         <section id="fitness-instructor">
             <h2><a href="fitness-instructor.html">Фитнес Инструктор</a></h2>
