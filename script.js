@@ -106,3 +106,17 @@ function calculateCalories() {
     document.getElementById('result').style.display = 'block'; // Make the result div visible
 }
 
+
+function calculateBMI() {
+    var weight = document.getElementById('bmi-weight').value;
+    var height = document.getElementById('bmi-height').value;
+
+    // Convert height from cm to meters before calculation
+    height = height / 100;
+
+    var bmi = weight / (height * height);
+    
+    document.getElementById('bmi-value').textContent = bmi.toFixed(2);
+    document.getElementById('bmi-result').style.display = 'block'; // Show the result
+}
+
