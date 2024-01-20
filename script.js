@@ -108,15 +108,32 @@ function calculateCalories() {
 
 
 function calculateBMI() {
+    var unitSystem = document.getElementById('bmi-unit-system').value;
     var weight = document.getElementById('bmi-weight').value;
     var height = document.getElementById('bmi-height').value;
 
-    // Convert height from cm to meters before calculation
+    // Convert to metric if the user selected imperial
+    if (unitSystem === 'imperial') {
+        weight = weight * 0.453592; // Convert pounds to kg
+        height = height * 2.54; // Convert inches to cm
+    }
+
+    // Convert height from cm to meters for BMI calculation
     height = height / 100;
 
     var bmi = weight / (height * height);
-    
+    var category = getBMICategory(bmi);
+
     document.getElementById('bmi-value').textContent = bmi.toFixed(2);
+    document.getElementById('bmi-category').textContent = category;
     document.getElementById('bmi-result').style.display = 'block'; // Show the result
 }
+
+function getBMICategory(bmi) {
+    if (bmi < 18.5) return 'Underweight';
+    if (bmi >= 18.5 && bmi <= 24.9) return 'Normal weight';
+    if (bmi >= 25 && bmi <= 29.9) return 'Overweight';
+    return 'Obesity';
+}
+
 
