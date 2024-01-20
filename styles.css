@@ -110,22 +110,25 @@ button:hover, button:focus {
 
 #calculators-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* This will ensure that the calculators stack on smaller screens */
-    margin: 20px 0;
+    justify-content: center; /* Aligns calculators to the center */
+    flex-wrap: wrap; /* Allows calculators to stack on smaller screens */
+    gap: 20px; /* Adds space between calculators */
+    padding: 20px;
 }
 
 .calculator {
-    flex: 1; /* This will make sure both calculators flexibly share available space */
+    flex: 0 0 auto; /* Prevents calculators from stretching */
+    width: calc(50% - 10px); /* Sets width to half of container minus gap */
+    max-width: 400px; /* Maximum width for each calculator */
     min-width: 300px; /* Minimum width before wrapping */
-    margin: 10px; /* Spacing between calculators */
     padding: 20px;
     background-color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Continue with other styles, ensuring they apply within .calculator as needed */
+/* Ensure other styles continue to apply as needed */
+
 
 
 #calorie-calculator {
