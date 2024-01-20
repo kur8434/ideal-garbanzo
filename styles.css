@@ -112,7 +112,7 @@ button:hover, button:focus {
     display: flex;
     justify-content: center; /* Aligns calculators to the center */
     flex-wrap: wrap; /* Allows calculators to stack on smaller screens */
-    gap: 20px; /* Adds space between calculators */
+    gap: 10px; /* Adds space between calculators */
     padding: 20px;
 }
 
