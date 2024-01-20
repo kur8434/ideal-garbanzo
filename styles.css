@@ -74,45 +74,80 @@ button:hover, button:focus {
 #calorie-calculator {
     background-color: #f0f0f0; /* Example background color */
     padding:20px;
-border-radius: 10px;
-margin-top: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 #calorie-calculator label {
-display: block;
-margin-top: 10px;
+    display: block;
+    margin-top: 10px;
 }
 
 #calorie-calculator input,
 #calorie-calculator select {
-width: 100%;
-padding: 8px;
-margin-top: 5px;
-border-radius: 5px;
-border: 1px solid #ddd;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 #calorie-calculator button {
-background-color: #87CEEB;
-color: white;
-padding: 10px 15px;
-border: none;
-border-radius: 5px;
-margin-top: 15px;
-cursor: pointer;
+    background-color: #87CEEB;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 #calorie-calculator button:hover {
-background-color: #5b9bd5;
+    background-color: #5b9bd5;
 }
 
 #result {
-margin-top: 20px;
-background-color: #e7f5ff;
-padding: 10px;
-border-radius: 5px;
-display: none; /* Hide result until calculation is done */
+    margin-top: 20px;
+    background-color: #e7f5ff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Hide result until calculation is done */
 }
+
+#bmi-calculator {
+    background-color: #f0f0f0; /* Example background color */
+    padding:20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#bmi-calculator input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#bmi-calculator button {
+    background-color: #87CEEB;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#bmi-result {
+    margin-top: 20px;
+    background-color: #e7f5ff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Hide result until calculation is done */
+    display: none; /* Hide result until calculation is done */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
