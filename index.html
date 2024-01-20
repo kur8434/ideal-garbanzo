@@ -54,17 +54,27 @@
         
     <section id="bmi-calculator">
         <h2>BMI Calculator</h2>
-            <form id="bmi-form">
-                <label for="bmi-weight">Weight (kg):</label>
-                <input type="number" id="bmi-weight" name="bmi-weight" required>
-        
-                <label for="bmi-height">Height (cm):</label>
-                <input type="number" id="bmi-height" name="bmi-height" required>
-        
-                <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-            </form>
-            <div id="bmi-result">Your BMI: <span id="bmi-value"></span></div>
+        <form id="bmi-form">
+            <label for="bmi-unit-system">Unit System:</label>
+            <select id="bmi-unit-system" name="bmi-unit-system">
+                <option value="metric">Metric (kg, cm)</option>
+                <option value="imperial">Imperial (pounds, inches)</option>
+            </select>
+    
+            <label for="bmi-weight">Weight:</label>
+            <input type="number" id="bmi-weight" name="bmi-weight" required>
+    
+            <label for="bmi-height">Height:</label>
+            <input type="number" id="bmi-height" name="bmi-height" required>
+    
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+        <div id="bmi-result">
+            Your BMI: <span id="bmi-value"></span>
+            <p id="bmi-category"></p>
+        </div>
     </section>
+
 
 
         <section id="fitness-instructor">
