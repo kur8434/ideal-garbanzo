@@ -1,6 +1,8 @@
 /* Enhanced styles.css for "ЕДЕМ - The Kingdom Of Heaven On Earth" */
 
 body {
+    background: linear-gradient(to right, #87CEEB, #ffffff); /* A gradient from sky blue to white */
+    color: #333;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -71,6 +73,12 @@ button:hover, button:focus {
     outline: none;
 }
 
+a:hover, button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}    
+
+
 #top-nav {
     position: fixed;
     top: 0;
@@ -118,7 +126,12 @@ button:hover, button:focus {
     gap: 20px; /* Space between calculators */
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 .calculator {
+    animation: fadeIn 1s;   
     flex: 1; /* Allows calculators to share the available space */
     max-width: 380px; /* Maximum width for each calculator */
     padding: 20px;
