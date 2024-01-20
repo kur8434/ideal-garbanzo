@@ -110,17 +110,17 @@ button:hover, button:focus {
 
 #calculators-container {
     display: flex;
-    justify-content: center; /* Aligns calculators to the center */
-    flex-wrap: wrap; /* Allows calculators to stack on smaller screens */
-    gap: 10px; /* Adds space between calculators */
-    padding: 20px;
+    justify-content: space-between; /* Adjusts spacing between calculators */
+    align-items: center; /* Aligns calculators vertically */
+    max-width: 800px; /* Maximum width of the container */
+    margin: 20px auto; /* Centers the container */
+    padding: 10px;
+    gap: 20px; /* Space between calculators */
 }
 
 .calculator {
-    flex: 0 0 auto; /* Prevents calculators from stretching */
-    width: calc(50% - 10px); /* Sets width to half of container minus gap */
-    max-width: 400px; /* Maximum width for each calculator */
-    min-width: 300px; /* Minimum width before wrapping */
+    flex: 1; /* Allows calculators to share the available space */
+    max-width: 380px; /* Maximum width for each calculator */
     padding: 20px;
     background-color: #f0f0f0;
     border-radius: 10px;
@@ -128,7 +128,6 @@ button:hover, button:focus {
 }
 
 /* Ensure other styles continue to apply as needed */
-
 
 
 #calorie-calculator {
