@@ -1,28 +1,26 @@
 // Enhanced script.js
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Hide main content and footer initially
+    // Hide main content, footer, and header initially
     document.querySelector('main').style.display = 'none';
     document.querySelector('footer').style.display = 'none';
+    document.querySelector('header').style.display = 'none';
 
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+    // Other DOMContentLoaded logic...
+});
 
 function selectAvatar() {
     // Hide the avatar selection
     document.getElementById('avatar-selection').style.display = 'none';
 
-    // Show the main content and footer
+    // Show the main content, footer, and header
     document.querySelector('main').style.display = 'block';
     document.querySelector('footer').style.display = 'block';
+    document.querySelector('header').style.display = 'block';
 }
+
+// Rest of your JavaScript functions...
+
 
 
     // Dynamic content loading for testimonials
