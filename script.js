@@ -1,17 +1,18 @@
 // Enhanced script.js
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const avatars = document.querySelectorAll('.avatar');
     avatars.forEach(avatar => {
         avatar.addEventListener('click', selectAvatar);
     });
-    
+
+    // Hide main content, footer, and header initially
     document.querySelector('main').style.display = 'none';
     document.querySelector('footer').style.display = 'none';
     document.querySelector('header').style.display = 'none';
 
-    // Other DOMContentLoaded logic...
+    // Load dynamic content if needed
+    loadDynamicContent();
 });
 
 function selectAvatar() {
@@ -23,9 +24,6 @@ function selectAvatar() {
     document.querySelector('footer').style.display = 'block';
     document.querySelector('header').style.display = 'block';
 }
-
-// Rest of your JavaScript functions...
-
 
 
     // Dynamic content loading for testimonials
@@ -68,17 +66,6 @@ function createTestimonialElement(testimonial) {
     div.innerHTML = `<strong>${testimonial.name}</strong><p>${testimonial.text}</p>`;
     return div;
 }
-
-// Optional: Subtle animations or interactivity
-// For example, animate elements on scroll
-window.addEventListener('scroll', () => {
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    elements.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight) {
-            el.classList.add('visible');
-        }
-    });
-});
 
 function calculateCalories() {
     var weight = document.getElementById('weight').value;
@@ -153,3 +140,13 @@ function getBMICategory(bmi) {
     if (bmi >= 25 && bmi <= 29.9) return 'Overweight';
     return 'Obesity';
 }
+
+// Function to animate elements on scroll
+window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('visible');
+        }
+    });
+});
