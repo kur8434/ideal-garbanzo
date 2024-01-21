@@ -1,19 +1,29 @@
 /* Enhanced styles.css for "ЕДЕМ - The Kingdom Of Heaven On Earth" */
 
 #avatar-selection {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
 }
 
-.avatars img {
-    width: 100px; /* Adjust size as needed */
-    margin: 10px;
+.avatar {
+    flex: 1;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
 }
 
-.avatars img:hover {
-    transform: scale(1.1);
+.male {
+    background-image: url('male-avatar.png'); /* Replace with your male avatar image path */
+}
+
+.female {
+    background-image: url('female-avatar.png'); /* Replace with your female avatar image path */
+}
+
+/* Optional: Adding a dividing line */
+.avatar:not(:last-child) {
+    border-right: 2px solid #000; /* Black line as divider */
 }
 
 body {
