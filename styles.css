@@ -9,7 +9,16 @@
     width: 100%;
     z-index: 2000; /* Ensure it's above other content */
     display: flex;
+    background-color: black; /* Set background to black */
 }
+
+/* Hide header initially */
+header {
+    display: none;
+}
+
+/* Rest of your existing CSS... */
+
 
 /* Avatars covering each half of the screen */
 .avatar {
