@@ -1,7 +1,12 @@
 // Enhanced script.js
 
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Hide main content, footer, and header initially
+    const avatars = document.querySelectorAll('.avatar');
+    avatars.forEach(avatar => {
+        avatar.addEventListener('click', selectAvatar);
+    });
+    
     document.querySelector('main').style.display = 'none';
     document.querySelector('footer').style.display = 'none';
     document.querySelector('header').style.display = 'none';
