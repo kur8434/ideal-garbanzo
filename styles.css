@@ -265,6 +265,15 @@ footer a img {
     margin: 5px;
 }
 
+.parallax {
+    background-image: url('parallax-bg.jpg');
+    height: 500px; /* Adjust height as needed */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
