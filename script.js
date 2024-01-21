@@ -137,3 +137,16 @@ function getBMICategory(bmi) {
 }
 
 
+function selectAvatar(gender) {
+    // Here you can add logic to handle the avatar selection
+    console.log("Avatar selected:", gender);
+
+    // Example: Redirect to a specific page based on the selection
+    if (gender === 'male') {
+        window.location.href = 'male-section.html'; // Adjust the URL as needed
+    } else {
+        window.location.href = 'female-section.html'; // Adjust the URL as needed
+    }
+}
+
+
