@@ -1,6 +1,10 @@
 // Enhanced script.js
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Hide main content and footer initially
+    document.querySelector('main').style.display = 'none';
+    document.querySelector('footer').style.display = 'none';
+
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -11,7 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+function selectAvatar(gender) {
+    // Hide the avatar selection
+    document.getElementById('avatar-selection').style.display = 'none';
+
+    // Show the main content and footer
+    document.querySelector('main').style.display = 'block';
+    document.querySelector('footer').style.display = 'block';
+
+    // Redirect to gender-specific section if required
+    // window.location.href = gender === 'male' ? 'male-section.html' : 'female-section.html';
+}
+
     // Dynamic content loading for testimonials
+
     loadDynamicContent();
 });
 
@@ -135,15 +152,3 @@ function getBMICategory(bmi) {
     if (bmi >= 25 && bmi <= 29.9) return 'Overweight';
     return 'Obesity';
 }
-
-
-function selectAvatar(gender) {
-    if (gender === 'male') {
-        window.location.href = 'male-section.html'; // Adjust URL as needed
-    } else {
-        window.location.href = 'female-section.html'; // Adjust URL as needed
-    }
-}
-
-
-
