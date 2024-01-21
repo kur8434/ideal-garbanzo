@@ -26,7 +26,7 @@ function selectAvatar() {
     // Dynamic content loading for testimonials
 
     loadDynamicContent();
-});
+);
 
 // Function to load dynamic content
 function loadDynamicContent() {
