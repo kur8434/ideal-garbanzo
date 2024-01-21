@@ -1,5 +1,21 @@
 /* Enhanced styles.css for "ЕДЕМ - The Kingdom Of Heaven On Earth" */
 
+#avatar-selection {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.avatars img {
+    width: 100px; /* Adjust size as needed */
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatars img:hover {
+    transform: scale(1.1);
+}
+
 body {
     background: linear-gradient(to right, #87CEEB, #ffffff); /* A gradient from sky blue to white */
     color: #333;
