@@ -274,6 +274,24 @@ footer a img {
     background-size: cover;
 }
 
+.section-divider {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #87CEEB, #ffffff);
+    margin: 20px 0;
+}
+
+.highlighted-section {
+    text-align: center; /* Center aligns the text */
+    font-size: 1.2em; /* Makes the font larger */
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #f0f0f0; /* Light background for the section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
