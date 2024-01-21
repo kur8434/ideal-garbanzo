@@ -15,17 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-function selectAvatar(gender) {
+function selectAvatar() {
     // Hide the avatar selection
     document.getElementById('avatar-selection').style.display = 'none';
 
     // Show the main content and footer
     document.querySelector('main').style.display = 'block';
     document.querySelector('footer').style.display = 'block';
-
-    // Redirect to gender-specific section if required
-    // window.location.href = gender === 'male' ? 'male-section.html' : 'female-section.html';
 }
+
 
     // Dynamic content loading for testimonials
 
