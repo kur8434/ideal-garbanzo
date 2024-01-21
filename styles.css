@@ -1,29 +1,36 @@
 /* Enhanced styles.css for "ЕДЕМ - The Kingdom Of Heaven On Earth" */
 
+/* Full viewport height for initial avatar selection */
 #avatar-selection {
-    display: flex;
-    height: 100vh; /* Full viewport height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
     width: 100%;
+    z-index: 2000; /* Ensure it's above other content */
+    display: flex;
 }
 
+/* Avatars covering each half of the screen */
 .avatar {
     flex: 1;
     cursor: pointer;
     background-size: cover;
     background-position: center;
+    height: 100vh;
 }
 
 .male {
-    background-image: url('male-avatar.png'); /* Replace with your male avatar image path */
+    background-image: url('male-avatar.png');
 }
 
 .female {
-    background-image: url('female-avatar.png'); /* Replace with your female avatar image path */
+    background-image: url('female-avatar.png');
 }
 
-/* Optional: Adding a dividing line */
-.avatar:not(:last-child) {
-    border-right: 2px solid #000; /* Black line as divider */
+/* Hide main content initially */
+main, footer {
+    display: none;
 }
 
 body {
@@ -104,16 +111,13 @@ a:hover, button:hover {
     transition: transform 0.3s ease;
 }    
 
-
+/* Adjust the top navigation bar */
 #top-nav {
-    position: fixed;
+    position: relative; /* Non-sticky position */
+    width: 100%; /* Full width */
     top: 0;
     right: 0;
-    padding: 10px;
-    background-color: #f8f8f8;
-    border-bottom-left-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-    z-index: 1000; /* Make sure the nav appears above other content */
+    z-index: 1000;
 }
 
 #top-nav ul {
