@@ -1,21 +1,28 @@
-// Enhanced script.js
-
 document.addEventListener("DOMContentLoaded", () => {
+    // Check if the avatar has already been selected
+    if (!localStorage.getItem('avatarSelected')) {
+        // Hide main content, footer, and header initially
+        document.querySelector('main').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+        document.querySelector('header').style.display = 'none';
+    } else {
+        // Hide the avatar selection if already selected
+        document.getElementById('avatar-selection').style.display = 'none';
+    }
+
     const avatars = document.querySelectorAll('.avatar');
     avatars.forEach(avatar => {
         avatar.addEventListener('click', selectAvatar);
     });
-
-    // Hide main content, footer, and header initially
-    document.querySelector('main').style.display = 'none';
-    document.querySelector('footer').style.display = 'none';
-    document.querySelector('header').style.display = 'none';
 
     // Load dynamic content if needed
     loadDynamicContent();
 });
 
 function selectAvatar() {
+    // Save the avatar selection
+    localStorage.setItem('avatarSelected', true);
+
     // Hide the avatar selection
     document.getElementById('avatar-selection').style.display = 'none';
 
