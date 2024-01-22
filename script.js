@@ -1,29 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Page loaded. Checking avatar selection...");
     if (localStorage.getItem('avatarSelected')) {
-        console.log("Avatar already selected. Showing main content.");
         showMainContent();
     } else {
-        console.log("No avatar selected. Showing avatar selection.");
         hideMainContent();
     }
 
     const avatars = document.querySelectorAll('.avatar');
     avatars.forEach(avatar => {
         avatar.addEventListener('click', () => {
-            const avatarType = avatar.getAttribute('data-avatar-type');
-            console.log(`Avatar selected: ${avatarType}`);
-            selectAvatar(avatarType);
+            const avatarSrc = avatar.src;
+            selectAvatar(avatarSrc);
             showMainContent();
         });
     });
 });
 
-function selectAvatar(avatarType) {
+function selectAvatar(avatarSrc) {
     localStorage.setItem('avatarSelected', 'true');
-    const imagePath = `Images/Avatar/${avatarType}-avatar.png`;
-    console.log(`Saving avatar image path: ${imagePath}`);
-    localStorage.setItem('avatarImageSrc', imagePath);
+    localStorage.setItem('avatarImageSrc', avatarSrc);
 }
 
 function showMainContent() {
@@ -35,10 +29,9 @@ function showMainContent() {
 }
 
 function showSelectedAvatar() {
+    const avatarImage = document.getElementById('avatar-image');
     const imagePath = localStorage.getItem('avatarImageSrc');
-    console.log(`Retrieved avatar image path: ${imagePath}`);
     if (imagePath) {
-        const avatarImage = document.getElementById('avatar-image');
         avatarImage.src = imagePath;
         document.getElementById('avatar-display').style.display = 'block';
     } else {
@@ -57,8 +50,8 @@ function resetAvatar() {
     localStorage.removeItem('avatarSelected');
     localStorage.removeItem('avatarImageSrc');
     hideMainContent();
-    console.log("Avatar reset. Showing avatar selection.");
 }
+
 
 
 
