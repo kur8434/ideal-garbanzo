@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Check if the avatar has already been selected
+    console.log("Page loaded. Checking avatar selection...");
     if (localStorage.getItem('avatarSelected')) {
+        console.log("Avatar already selected. Showing main content.");
         showMainContent();
     } else {
+        console.log("No avatar selected. Showing avatar selection.");
         hideMainContent();
     }
 
-    // Attach event listeners to avatar elements
     const avatars = document.querySelectorAll('.avatar');
     avatars.forEach(avatar => {
         avatar.addEventListener('click', () => {
-            const avatarType = avatar.getAttribute('data-avatar-type'); // Assuming each avatar has a data attribute for type
+            const avatarType = avatar.getAttribute('data-avatar-type');
+            console.log(`Avatar selected: ${avatarType}`);
             selectAvatar(avatarType);
             showMainContent();
         });
@@ -18,10 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function selectAvatar(avatarType) {
-    // Save the avatar selection in local storage
     localStorage.setItem('avatarSelected', 'true');
-    // Save the avatar image path based on the avatar type
     const imagePath = `Images/Avatar/${avatarType}-avatar.png`;
+    console.log(`Saving avatar image path: ${imagePath}`);
     localStorage.setItem('avatarImageSrc', imagePath);
 }
 
@@ -34,9 +35,15 @@ function showMainContent() {
 }
 
 function showSelectedAvatar() {
-    const avatarImage = document.getElementById('avatar-image');
-    avatarImage.src = localStorage.getItem('avatarImageSrc');
-    document.getElementById('avatar-display').style.display = 'block';
+    const imagePath = localStorage.getItem('avatarImageSrc');
+    console.log(`Retrieved avatar image path: ${imagePath}`);
+    if (imagePath) {
+        const avatarImage = document.getElementById('avatar-image');
+        avatarImage.src = imagePath;
+        document.getElementById('avatar-display').style.display = 'block';
+    } else {
+        console.error("No avatar image path found in local storage.");
+    }
 }
 
 function hideMainContent() {
@@ -50,8 +57,9 @@ function resetAvatar() {
     localStorage.removeItem('avatarSelected');
     localStorage.removeItem('avatarImageSrc');
     hideMainContent();
-    // location.reload(); // Optionally reload the page
+    console.log("Avatar reset. Showing avatar selection.");
 }
+
 
 
 
