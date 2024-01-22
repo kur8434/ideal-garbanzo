@@ -1,35 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Check if the avatar has already been selected
-    if (!localStorage.getItem('avatarSelected')) {
-        // Hide main content, footer, and header initially
-        document.querySelector('main').style.display = 'none';
-        document.querySelector('footer').style.display = 'none';
-        document.querySelector('header').style.display = 'none';
+    if (localStorage.getItem('avatarSelected')) {
+        // Avatar selected, show main content and hide avatar selection
+        showMainContent();
     } else {
-        // Hide the avatar selection if already selected
-        document.getElementById('avatar-selection').style.display = 'none';
+        // No avatar selected, show only avatar selection
+        hideMainContent();
     }
 
+    // Attach event listeners to avatar elements
     const avatars = document.querySelectorAll('.avatar');
     avatars.forEach(avatar => {
-        avatar.addEventListener('click', selectAvatar);
+        avatar.addEventListener('click', () => {
+            selectAvatar();
+            showMainContent();
+        });
     });
-
-    // Load dynamic content if needed
-    loadDynamicContent();
 });
 
 function selectAvatar() {
-    // Save the avatar selection
-    localStorage.setItem('avatarSelected', true);
+    // Save the avatar selection in local storage
+    localStorage.setItem('avatarSelected', 'true');
+}
 
-    // Hide the avatar selection
-    document.getElementById('avatar-selection').style.display = 'none';
-
-    // Show the main content, footer, and header
+function showMainContent() {
+    // Show main content, footer, and header
     document.querySelector('main').style.display = 'block';
     document.querySelector('footer').style.display = 'block';
     document.querySelector('header').style.display = 'block';
+    // Hide the avatar selection
+    document.getElementById('avatar-selection').style.display = 'none';
+}
+
+function hideMainContent() {
+    // Hide main content, footer, and header
+    document.querySelector('main').style.display = 'none';
+    document.querySelector('footer').style.display = 'none';
+    document.querySelector('header').style.display = 'none';
+    // Show the avatar selection
+    document.getElementById('avatar-selection').style.display = 'block';
 }
 
 
