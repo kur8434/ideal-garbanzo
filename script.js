@@ -30,6 +30,24 @@ function showMainContent() {
     document.querySelector('header').style.display = 'block';
     // Hide the avatar selection
     document.getElementById('avatar-selection').style.display = 'none';
+
+    showSelectedAvatar();
+}
+
+function showSelectedAvatar() {
+    // Display the avatar image based on the user's selection
+    const avatarImage = document.getElementById('avatar-image');
+    avatarImage.src = localStorage.getItem('avatarImageSrc'); // Assuming avatar image source is stored
+    document.getElementById('avatar-display').style.display = 'block';
+}
+
+function resetAvatar() {
+    // Reset the avatar selection
+    localStorage.removeItem('avatarSelected');
+    localStorage.removeItem('avatarImageSrc'); // Assuming avatar image source is stored
+    hideMainContent();
+    // Optionally, reload the page to show avatar selection again
+    // location.reload();
 }
 
 function hideMainContent() {
