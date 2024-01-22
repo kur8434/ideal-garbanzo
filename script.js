@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Check if the avatar has already been selected
     if (localStorage.getItem('avatarSelected')) {
-        // Avatar selected, show main content and hide avatar selection
         showMainContent();
     } else {
-        // No avatar selected, show only avatar selection
         hideMainContent();
     }
 
@@ -12,52 +10,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const avatars = document.querySelectorAll('.avatar');
     avatars.forEach(avatar => {
         avatar.addEventListener('click', () => {
-            selectAvatar();
+            const avatarType = avatar.getAttribute('data-avatar-type'); // Assuming each avatar has a data attribute for type
+            selectAvatar(avatarType);
             showMainContent();
         });
     });
 });
 
-function selectAvatar() {
+function selectAvatar(avatarType) {
     // Save the avatar selection in local storage
     localStorage.setItem('avatarSelected', 'true');
+    // Save the avatar image path based on the avatar type
+    const imagePath = `Images/Avatar/${avatarType}-avatar.png`;
+    localStorage.setItem('avatarImageSrc', imagePath);
 }
 
 function showMainContent() {
-    // Show main content, footer, and header
     document.querySelector('main').style.display = 'block';
     document.querySelector('footer').style.display = 'block';
     document.querySelector('header').style.display = 'block';
-    // Hide the avatar selection
     document.getElementById('avatar-selection').style.display = 'none';
-
     showSelectedAvatar();
 }
 
 function showSelectedAvatar() {
-    // Display the avatar image based on the user's selection
     const avatarImage = document.getElementById('avatar-image');
-    avatarImage.src = localStorage.getItem('avatarImageSrc'); // Assuming avatar image source is stored
+    avatarImage.src = localStorage.getItem('avatarImageSrc');
     document.getElementById('avatar-display').style.display = 'block';
 }
 
-function resetAvatar() {
-    // Reset the avatar selection
-    localStorage.removeItem('avatarSelected');
-    localStorage.removeItem('avatarImageSrc'); // Assuming avatar image source is stored
-    hideMainContent();
-    // Optionally, reload the page to show avatar selection again
-    // location.reload();
-}
-
 function hideMainContent() {
-    // Hide main content, footer, and header
     document.querySelector('main').style.display = 'none';
     document.querySelector('footer').style.display = 'none';
     document.querySelector('header').style.display = 'none';
-    // Show the avatar selection
     document.getElementById('avatar-selection').style.display = 'block';
 }
+
+function resetAvatar() {
+    localStorage.removeItem('avatarSelected');
+    localStorage.removeItem('avatarImageSrc');
+    hideMainContent();
+    // location.reload(); // Optionally reload the page
+}
+
 
 
 // Function to load dynamic content
